@@ -527,11 +527,11 @@ case "$target" in
                 echo 3 > /proc/sys/kernel/sched_ravg_hist_size
 
                 # HMP Task packing settings for 8916
-                echo 30 > /proc/sys/kernel/sched_small_task
-                echo 50 > /sys/devices/system/cpu/cpu0/sched_mostly_idle_load
-                echo 50 > /sys/devices/system/cpu/cpu1/sched_mostly_idle_load
-                echo 50 > /sys/devices/system/cpu/cpu2/sched_mostly_idle_load
-                echo 50 > /sys/devices/system/cpu/cpu3/sched_mostly_idle_load
+                echo 20 > /proc/sys/kernel/sched_small_task
+                echo 30 > /sys/devices/system/cpu/cpu0/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu1/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu2/sched_mostly_idle_load
+                echo 30 > /sys/devices/system/cpu/cpu3/sched_mostly_idle_load
                 echo 3 > /sys/devices/system/cpu/cpu0/sched_mostly_idle_nr_run
                 echo 3 > /sys/devices/system/cpu/cpu1/sched_mostly_idle_nr_run
                 echo 3 > /sys/devices/system/cpu/cpu2/sched_mostly_idle_nr_run
@@ -1118,9 +1118,3 @@ case "$target" in
         echo $oem_version > /sys/devices/soc0/image_crm_version
         ;;
 esac
-
-#Set per_process_reclaim tuning parameters
-echo 50 > /sys/module/process_reclaim/parameters/pr_pressure_min
-echo 70 > /sys/module/process_reclaim/parameters/pr_pressure_max
-echo 512 > /sys/module/process_reclaim/parameters/per_swap_size
-echo 30 > /sys/module/process_reclaim/parameters/swap_opt_eff
