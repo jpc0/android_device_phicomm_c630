@@ -17,7 +17,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),clue630)
+ifeq ($(TARGET_DEVICE),c630)
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
 # Symlinks
