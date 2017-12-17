@@ -1,3 +1,4 @@
+
 #
 # Copyright (C) 2016 The CyanogenMod Project
 #
@@ -27,4 +28,8 @@ $(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
     $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat; \
     ln -sf /data/misc/wifi/WCNSS_qcom_cfg.ini \
     $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
+
+$(shell mkdir -p $(TARGET_OUT_ETC)/lib/modules/pronto; \
+	ln -sf /system/lib/modules/pronto/pronto_wlan.ko \
+	$(TARGET_OUT)/lib/modules/wlan.ko)
 endif

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/huawei/y560
+LOCAL_PATH := device/phicomm/clue630
 
 # Platform
 TARGET_NO_BOOTLOADER := true
@@ -41,7 +41,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_KERNEL_SEPARATED_DT := true
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 TARGET_KERNEL_CONFIG := msm8909-y560_defconfig
-TARGET_KERNEL_SOURCE := kernel/huawei/msm8909
+TARGET_PREBUILT_KERNEL :=device/phicomm/clue630/prebuilt/kernel/zImage
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-smd"
@@ -120,7 +120,7 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
-BOARD_SEPOLICY_DIRS += device/huawei/y560/sepolicy
+BOARD_SEPOLICY_DIRS += device/phicomm/clue630/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -131,6 +131,6 @@ BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_qcwcn
 TARGET_PROVIDES_WCNSS_QMI := true
 TARGET_USES_QCOM_WCNSS_QMI := true
-WIFI_DRIVER_FW_PATH_AP := "ap"
-WIFI_DRIVER_FW_PATH_STA := "sta"
+WIFI_DRIVER_MODULE_PATH :="system/lib/modlues/wlan.ko"
+WIFI_DRIVER_MODULE_NAME :="wlan"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
